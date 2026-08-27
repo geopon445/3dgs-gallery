@@ -2,9 +2,9 @@
   "works": [
     {
       "id": "nakano_ajisai_col2",
-      "title": "紫陽花園 (nakano_ajisai)",
-      "description": "ローカル動作確認用のテストデータ",
-      "file": "data/nakano_ajisai_col2.ply",
+      "title": "中野区立あじさい公園",
+      "description": "work.001",
+      "file": "https://github.com/geopon445/3dgs-gallery/releases/download/work.001/nakano_ajisai_col2.ply",
       "up": [0, -1, 0]
     }
   ]

@@ -1,0 +1,11 @@
+{
+  "works": [
+    {
+      "id": "nakano_ajisai_col2",
+      "title": "紫陽花園 (nakano_ajisai)",
+      "description": "ローカル動作確認用のテストデータ",
+      "file": "data/nakano_ajisai_col2.ply",
+      "up": [0, -1, 0]
+    }
+  ]
+}

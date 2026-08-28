@@ -13,6 +13,21 @@
         0
       ],
       "thumbnail": "data/中野あじさい公園-mtcx8z5c/thumb.png"
+    },
+    {
+      "id": "work-mtd0uvu1-jgp2",
+      "title": "鴨川デルタ",
+      "description": "サンプルアップロードです。",
+      "chunked": true,
+      "chunkCount": 9,
+      "format": "spz",
+      "file": "data/work-mtd0uvu1-jgp2/part-",
+      "thumbnail": "data/work-mtd0uvu1-jgp2/thumb.png",
+      "up": [
+        0,
+        1,
+        0
+      ]
     }
   ]
 }

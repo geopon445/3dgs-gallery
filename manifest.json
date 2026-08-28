@@ -28,6 +28,21 @@
         1,
         0
       ]
+    },
+    {
+      "id": "work-mtd2i9oh-mxxx",
+      "title": "打越神社",
+      "description": "plyだよ",
+      "chunked": true,
+      "chunkCount": 11,
+      "format": "ksplat",
+      "file": "data/work-mtd2i9oh-mxxx/part-",
+      "thumbnail": null,
+      "up": [
+        0,
+        1,
+        0
+      ]
     }
   ]
 }

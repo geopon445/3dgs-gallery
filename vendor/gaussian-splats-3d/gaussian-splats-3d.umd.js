@@ -4119,7 +4119,7 @@
     }
 
     const HEADER_SIZE = 16; // 4 + 4 + 4 + 1 + 1 + 1 + 1 bytes
-    const MAX_POINTS_TO_READ = 10000000;
+    const MAX_POINTS_TO_READ = 100000000;
 
     function deserializePackedGaussians(buffer) {
         const view = new DataView(buffer);

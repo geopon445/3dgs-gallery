@@ -5,7 +5,24 @@
       "title": "中野区立あじさい公園",
       "description": "work.001",
       "file": "https://github.com/geopon445/3dgs-gallery/releases/download/work.001/nakano_ajisai_col2.ply",
-      "up": [0, -1, 0]
+      "up": [
+        0,
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "中野あじさい公園-mtcx8z5c",
+      "title": "中野あじさい公園",
+      "description": "",
+      "chunked": true,
+      "format": "spz",
+      "file": "data/中野あじさい公園-mtcx8z5c/part-",
+      "up": [
+        0,
+        1,
+        0
+      ]
     }
   ]
 }

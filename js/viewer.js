@@ -41,11 +41,46 @@
     sharedMemoryForWorkers: false,
   });
 
+  const FORMAT_MAP = {
+    ply: window["Gaussian Splats 3D"].SceneFormat.Ply,
+    spz: window["Gaussian Splats 3D"].SceneFormat.Spz,
+    splat: window["Gaussian Splats 3D"].SceneFormat.Splat,
+    ksplat: window["Gaussian Splats 3D"].SceneFormat.KSplat,
+  };
+
+  // 25MB超のファイルはGitHubのUpload files画面(Web UI)で直接扱えないため、
+  // 20MB程度の断片(part-001.bin, part-002.bin, ...)に分割してリポジトリに置く運用を
+  // manifest.jsonの"chunked":trueで表現する。断片が何個あるかはmanifest側に持たせず、
+  // 存在しなくなる(fetchが失敗する)まで連番を取得し続けて自動判定する。
+  async function loadChunked(baseUrl) {
+    const buffers = [];
+    for (let n = 1; ; n++) {
+      const url = baseUrl + String(n).padStart(3, "0") + ".bin";
+      const res = await fetch(url);
+      if (!res.ok) break;
+      buffers.push(await res.arrayBuffer());
+    }
+    if (buffers.length === 0) {
+      throw new Error("チャンクファイルが見つかりません: " + baseUrl + "001.bin");
+    }
+    return URL.createObjectURL(new Blob(buffers));
+  }
+
   try {
-    await viewer.addSplatScene(work.file, {
+    let sourceUrl = work.file;
+    const addOptions = {
       showLoadingUI: true,
       splatAlphaRemovalThreshold: 5,
-    });
+    };
+    if (work.chunked) {
+      const format = FORMAT_MAP[work.format];
+      if (format === undefined) {
+        throw new Error('chunked:trueの場合は"format"(ply/spz/splat/ksplat)の指定が必要です');
+      }
+      sourceUrl = await loadChunked(work.file);
+      addOptions.format = format;
+    }
+    await viewer.addSplatScene(sourceUrl, addOptions);
     viewer.start();
   } catch (e) {
     console.error(e);

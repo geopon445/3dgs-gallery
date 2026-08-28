@@ -39,7 +39,6 @@
     initialCameraPosition: work.cameraPosition || [0, 1, 5],
     initialCameraLookAt: work.cameraLookAt || [0, 0, 0],
     sharedMemoryForWorkers: false,
-    gpuAcceleratedSort: true,
   });
 
   // WASD(+QE上下)でのFPS風移動。OrbitControls標準のキー操作は視点固定のまま画面内を
